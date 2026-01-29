@@ -31,7 +31,7 @@ export default function HomeScreen({ navigation }: Props) {
     {
       id: '2',
       title: 'Любимые',
-      emoji: '💖',
+      emoji: '⭐',
       color: colors.pink,
       onPress: () => navigation.navigate('Favorites')
     }
@@ -64,7 +64,7 @@ export default function HomeScreen({ navigation }: Props) {
                 <Text style={styles.menuEmoji}>{item.emoji}</Text>
                 <Text style={styles.menuTitle}>{item.title}</Text>
                 <View style={styles.menuArrow}>
-                  <Ionicons name="heart" size={24} color="#FFFFFF" />
+                  <Ionicons name="star" size={24} color="#FFFFFF" />
                 </View>
               </TouchableOpacity>
             ))}
@@ -100,7 +100,7 @@ export default function HomeScreen({ navigation }: Props) {
           {favoriteBooks.length > 0 && (
             <View style={styles.statsContainer}>
               <View style={styles.statCard}>
-                <Text style={styles.statEmoji}>💖</Text>
+                <Text style={styles.statEmoji}>⭐</Text>
                 <Text style={styles.statNumber}>{favoriteBooks.length}</Text>
                 <Text style={styles.statLabel}>Любимых книг</Text>
               </View>

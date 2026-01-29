@@ -32,9 +32,9 @@ export default function BookCard({ book, onPress, style }: Props) {
                 <View style={styles.favoriteButtonBackground}>
                   <Pressable onPress={handleFavoritePress} style={styles.favoriteButtonInner}>
                     <Ionicons
-                      name={book.isFavorite ? "heart" : "heart-outline"}
+                      name={book.isFavorite ? "star" : "star-outline"}
                       size={20}
-                      color={book.isFavorite ? colors.error : colors.textLight}
+                      color={book.isFavorite ? colors.warning : colors.textLight}
                     />
                   </Pressable>
                 </View>
