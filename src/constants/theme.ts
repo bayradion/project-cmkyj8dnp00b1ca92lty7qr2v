@@ -4,8 +4,8 @@ export const colors = {
   primary: '#FF6B6B',
   secondary: '#4ECDC4',
   accent: '#45B7D1',
-  background: '#FFF9E6',
-  surface: '#FFFFFF',
+  background: '#E8F5E8', // Light green background
+  surface: '#F0FFF0', // Very light green for surfaces
   text: '#2C3E50',
   textLight: '#7F8C8D',
   success: '#2ECC71',
@@ -23,6 +23,12 @@ export const colors = {
   mint: '#98FB98',
   lavender: '#E6E6FA',
   peach: '#FFCBA4',
+  
+  // Additional green shades for the theme
+  lightGreen: '#E8F5E8',
+  paleGreen: '#F0FFF0',
+  forestGreen: '#228B22',
+  springGreen: '#00FF7F',
 };
 
 export const theme = {
