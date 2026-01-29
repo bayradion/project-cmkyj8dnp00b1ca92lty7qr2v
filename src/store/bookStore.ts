@@ -9,6 +9,7 @@ const mockBooks: Book[] = [
     coverColor: '#FFB6C1',
     emoji: '🐻',
     ageRange: '3-6 лет',
+    isFavorite: false,
     pages: [
       {
         id: '1-1',
@@ -37,6 +38,7 @@ const mockBooks: Book[] = [
     coverColor: '#DDA0DD',
     emoji: '🦋',
     ageRange: '4-7 лет',
+    isFavorite: false,
     pages: [
       {
         id: '2-1',
@@ -59,6 +61,7 @@ const mockBooks: Book[] = [
     coverColor: '#87CEEB',
     emoji: '🚀',
     ageRange: '5-8 лет',
+    isFavorite: false,
     pages: [
       {
         id: '3-1',
@@ -81,6 +84,7 @@ const mockBooks: Book[] = [
     coverColor: '#20B2AA',
     emoji: '🐠',
     ageRange: '3-6 лет',
+    isFavorite: false,
     pages: [
       {
         id: '4-1',
@@ -97,18 +101,16 @@ export const useBookStore = create<BookStore>((set, get) => ({
   favoriteBooks: [],
   
   toggleFavorite: (bookId: string) => set((state) => {
-    const book = state.books.find(b => b.id === bookId);
-    if (!book) return state;
-
-    const isFavorite = state.favoriteBooks.some(b => b.id === bookId);
+    const updatedBooks = state.books.map(book => 
+      book.id === bookId ? { ...book, isFavorite: !book.isFavorite } : book
+    );
+    
+    const updatedBook = updatedBooks.find(book => book.id === bookId);
+    const favoriteBooks = updatedBooks.filter(book => book.isFavorite);
     
     return {
-      favoriteBooks: isFavorite 
-        ? state.favoriteBooks.filter(b => b.id !== bookId)
-        : [...state.favoriteBooks, { ...book, isFavorite: true }],
-      books: state.books.map(b => 
-        b.id === bookId ? { ...b, isFavorite: !isFavorite } : b
-      )
+      books: updatedBooks,
+      favoriteBooks: favoriteBooks
     };
   }),
   
