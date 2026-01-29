@@ -1,7 +1,7 @@
 import { MD3LightTheme } from 'react-native-paper';
 
 export const colors = {
-  primary: '#FF6B6B',
+  primary: '#4CAF50', // Changed from red to a friendly green
   secondary: '#4ECDC4',
   accent: '#45B7D1',
   background: '#E8F5E8', // Light green background
