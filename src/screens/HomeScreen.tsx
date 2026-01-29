@@ -43,7 +43,7 @@ export default function HomeScreen({ navigation }: Props) {
         colors={[colors.primary, colors.secondary]}
         style={styles.container}
       >
-        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
           {/* Header */}
           <View style={styles.header}>
             <View style={styles.headerContent}>
@@ -80,6 +80,7 @@ export default function HomeScreen({ navigation }: Props) {
             </View>
             
             <ScrollView 
+              style={{ flex: 1 }}
               horizontal 
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.booksScrollContainer}

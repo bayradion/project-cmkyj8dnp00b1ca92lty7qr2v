@@ -34,6 +34,7 @@ export default function BookListScreen({ navigation }: Props) {
       </View>
       
       <FlatList
+        style={{ flex: 1 }}
         data={books}
         renderItem={renderBookItem}
         keyExtractor={(item) => item.id}

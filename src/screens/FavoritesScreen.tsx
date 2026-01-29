@@ -48,6 +48,7 @@ export default function FavoritesScreen({ navigation }: Props) {
       </View>
       
       <FlatList
+        style={{ flex: 1 }}
         data={favoriteBooks}
         renderItem={renderBookItem}
         keyExtractor={(item) => item.id}
