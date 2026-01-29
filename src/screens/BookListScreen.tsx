@@ -27,7 +27,7 @@ export default function BookListScreen({ navigation }: Props) {
   );
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { flex: 1 }]}>
       <View style={styles.header}>
         <Text style={styles.headerText}>📚 Все наши книги</Text>
         <Text style={styles.subtitleText}>Выбери книгу для чтения</Text>

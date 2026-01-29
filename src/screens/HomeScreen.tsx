@@ -38,76 +38,78 @@ export default function HomeScreen({ navigation }: Props) {
   ];
 
   return (
-    <LinearGradient
-      colors={[colors.primary, colors.secondary]}
-      style={styles.container}
-    >
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
-        {/* Header */}
-        <View style={styles.header}>
-          <View style={styles.headerContent}>
-            <Text style={styles.welcomeText}>Привет, маленький читатель! 👋</Text>
-            <Text style={styles.titleText}>Детские Книжки</Text>
-            <Text style={styles.subtitleText}>Волшебные истории ждут тебя</Text>
-          </View>
-        </View>
-
-        {/* Menu Cards */}
-        <View style={styles.menuContainer}>
-          {menuItems.map((item) => (
-            <TouchableOpacity
-              key={item.id}
-              style={[styles.menuCard, { backgroundColor: item.color }]}
-              onPress={item.onPress}
-            >
-              <Text style={styles.menuEmoji}>{item.emoji}</Text>
-              <Text style={styles.menuTitle}>{item.title}</Text>
-              <View style={styles.menuArrow}>
-                <Ionicons name="heart" size={24} color="#FFFFFF" />
-              </View>
-            </TouchableOpacity>
-          ))}
-        </View>
-
-        {/* Featured Books */}
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>🌟 Рекомендуем</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('BookList')}>
-              <Text style={styles.seeAllText}>Все книги →</Text>
-            </TouchableOpacity>
-          </View>
-          
-          <ScrollView 
-            horizontal 
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.booksScrollContainer}
-          >
-            {featuredBooks.map((book) => (
-              <BookCard
-                key={book.id}
-                book={book}
-                onPress={() => navigation.navigate('BookReader', { bookId: book.id })}
-                style={styles.bookCard}
-              />
-            ))}
-          </ScrollView>
-        </View>
-
-        {/* Stats */}
-        {favoriteBooks.length > 0 && (
-          <View style={styles.statsContainer}>
-            <View style={styles.statCard}>
-              <Text style={styles.statEmoji}>💖</Text>
-              <Text style={styles.statNumber}>{favoriteBooks.length}</Text>
-              <Text style={styles.statLabel}>Любимых книг</Text>
+    <View style={{ flex: 1 }}>
+      <LinearGradient
+        colors={[colors.primary, colors.secondary]}
+        style={styles.container}
+      >
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+          {/* Header */}
+          <View style={styles.header}>
+            <View style={styles.headerContent}>
+              <Text style={styles.welcomeText}>Привет, маленький читатель! 👋</Text>
+              <Text style={styles.titleText}>Детские Книжки</Text>
+              <Text style={styles.subtitleText}>Волшебные истории ждут тебя</Text>
             </View>
           </View>
-        )}
 
-        <View style={styles.bottomPadding} />
-      </ScrollView>
-    </LinearGradient>
+          {/* Menu Cards */}
+          <View style={styles.menuContainer}>
+            {menuItems.map((item) => (
+              <TouchableOpacity
+                key={item.id}
+                style={[styles.menuCard, { backgroundColor: item.color }]}
+                onPress={item.onPress}
+              >
+                <Text style={styles.menuEmoji}>{item.emoji}</Text>
+                <Text style={styles.menuTitle}>{item.title}</Text>
+                <View style={styles.menuArrow}>
+                  <Ionicons name="heart" size={24} color="#FFFFFF" />
+                </View>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          {/* Featured Books */}
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <Text style={styles.sectionTitle}>🌟 Рекомендуем</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('BookList')}>
+                <Text style={styles.seeAllText}>Все книги →</Text>
+              </TouchableOpacity>
+            </View>
+            
+            <ScrollView 
+              horizontal 
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.booksScrollContainer}
+            >
+              {featuredBooks.map((book) => (
+                <BookCard
+                  key={book.id}
+                  book={book}
+                  onPress={() => navigation.navigate('BookReader', { bookId: book.id })}
+                  style={styles.bookCard}
+                />
+              ))}
+            </ScrollView>
+          </View>
+
+          {/* Stats */}
+          {favoriteBooks.length > 0 && (
+            <View style={styles.statsContainer}>
+              <View style={styles.statCard}>
+                <Text style={styles.statEmoji}>💖</Text>
+                <Text style={styles.statNumber}>{favoriteBooks.length}</Text>
+                <Text style={styles.statLabel}>Любимых книг</Text>
+              </View>
+            </View>
+          )}
+
+          <View style={styles.bottomPadding} />
+        </ScrollView>
+      </LinearGradient>
+    </View>
   );
 }
 

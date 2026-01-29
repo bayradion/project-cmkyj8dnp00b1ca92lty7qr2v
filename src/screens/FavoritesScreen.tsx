@@ -28,7 +28,7 @@ export default function FavoritesScreen({ navigation }: Props) {
 
   if (favoriteBooks.length === 0) {
     return (
-      <View style={styles.emptyContainer}>
+      <View style={[styles.emptyContainer, { flex: 1 }]}>
         <Text style={styles.emptyEmoji}>💔</Text>
         <Text style={styles.emptyTitle}>Пока нет любимых книг</Text>
         <Text style={styles.emptySubtitle}>
@@ -39,7 +39,7 @@ export default function FavoritesScreen({ navigation }: Props) {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { flex: 1 }]}>
       <View style={styles.header}>
         <Text style={styles.headerText}>💖 Твои любимые книги</Text>
         <Text style={styles.subtitleText}>

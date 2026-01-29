@@ -47,7 +47,7 @@ export default function BookReaderScreen({ navigation, route }: Props) {
 
   if (!book) {
     return (
-      <View style={styles.errorContainer}>
+      <View style={[styles.errorContainer, { flex: 1 }]}>
         <Text style={styles.errorEmoji}>😕</Text>
         <Text style={styles.errorText}>Книга не найдена</Text>
         <TouchableOpacity
@@ -77,7 +77,7 @@ export default function BookReaderScreen({ navigation, route }: Props) {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { flex: 1 }]}>
       <LinearGradient
         colors={[currentPage.backgroundColor, '#FFFFFF']}
         style={styles.pageContainer}
@@ -289,22 +289,23 @@ const styles = {
     justifyContent: 'center' as const,
     alignItems: 'center' as const,
     backgroundColor: colors.background,
-    padding: spacing.xl,
+    paddingHorizontal: spacing.xl,
   },
   errorEmoji: {
     fontSize: 80,
     marginBottom: spacing.lg,
   },
   errorText: {
-    fontSize: fontSize.xl,
+    fontSize: fontSize.xxl,
+    fontWeight: 'bold' as const,
     color: colors.text,
     textAlign: 'center' as const,
-    marginBottom: spacing.xl,
+    marginBottom: spacing.lg,
   },
   backButton: {
     backgroundColor: colors.primary,
-    paddingHorizontal: spacing.xl,
     paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
     borderRadius: borderRadius.lg,
   },
   backButtonText: {
