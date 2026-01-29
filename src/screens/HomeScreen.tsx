@@ -63,7 +63,7 @@ export default function HomeScreen({ navigation }: Props) {
               <Text style={styles.menuEmoji}>{item.emoji}</Text>
               <Text style={styles.menuTitle}>{item.title}</Text>
               <View style={styles.menuArrow}>
-                <Ionicons name="chevron-forward" size={24} color="#FFFFFF" />
+                <Ionicons name="heart" size={24} color="#FFFFFF" />
               </View>
             </TouchableOpacity>
           ))}
